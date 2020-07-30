@@ -1,3 +1,5 @@
+Live site available at [global-vid.netlify.app](https://global-vid.netlify.app/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
