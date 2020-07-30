@@ -41,9 +41,7 @@
 // }
 
 import React, { Component } from 'react';
-// import { PrismCode } from 'react-prism';
 import { Player, ControlBar } from 'video-react';
-import { Button } from 'reactstrap';
 
 const sources = {
   sintelTrailer: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
@@ -144,73 +142,75 @@ export default class PlayerControlExample extends Component {
             this.player = player;
           }}
           autoPlay
+          fluid = {false}
+          poster = "http://media.w3.org/2010/05/bunny/poster.png"
         >
           <source src={this.state.source} />
-          <ControlBar autoHide={false} />
+          <ControlBar autoHide={true} />
         </Player>
         <div className="py-3">
-          <Button onClick={this.play} className="mr-3">
+          <button onClick={this.play} className="mr-3">
             play()
-          </Button>
-          <Button onClick={this.pause} className="mr-3">
+          </button>
+          <button onClick={this.pause} className="mr-3">
             pause()
-          </Button>
-          <Button onClick={this.load} className="mr-3">
+          </button>
+          <button onClick={this.load} className="mr-3">
             load()
-          </Button>
+          </button>
         </div>
         <div className="pb-3">
-          <Button onClick={this.changeCurrentTime(10)} className="mr-3">
+          <button onClick={this.changeCurrentTime(10)} className="mr-3">
             currentTime += 10
-          </Button>
-          <Button onClick={this.changeCurrentTime(-10)} className="mr-3">
+          </button>
+          <button onClick={this.changeCurrentTime(-10)} className="mr-3">
             currentTime -= 10
-          </Button>
-          <Button onClick={this.seek(50)} className="mr-3">
+          </button>
+          <button onClick={this.seek(50)} className="mr-3">
             currentTime = 50
-          </Button>
+          </button>
         </div>
         <div className="pb-3">
-          <Button onClick={this.changePlaybackRateRate(1)} className="mr-3">
+          <button onClick={this.changePlaybackRateRate(1)} className="mr-3">
             playbackRate++
-          </Button>
-          <Button onClick={this.changePlaybackRateRate(-1)} className="mr-3">
+          </button>
+          <button onClick={this.changePlaybackRateRate(-1)} className="mr-3">
             playbackRate--
-          </Button>
-          <Button onClick={this.changePlaybackRateRate(0.1)} className="mr-3">
+          </button>
+          <button onClick={this.changePlaybackRateRate(0.1)} className="mr-3">
             playbackRate+=0.1
-          </Button>
-          <Button onClick={this.changePlaybackRateRate(-0.1)} className="mr-3">
+          </button>
+          <button onClick={this.changePlaybackRateRate(-0.1)} className="mr-3">
             playbackRate-=0.1
-          </Button>
+          </button>
         </div>
         <div className="pb-3">
-          <Button onClick={this.changeVolume(0.1)} className="mr-3">
+          <button onClick={this.changeVolume(0.1)} className="mr-3">
             volume+=0.1
-          </Button>
-          <Button onClick={this.changeVolume(-0.1)} className="mr-3">
+          </button>
+          <button onClick={this.changeVolume(-0.1)} className="mr-3">
             volume-=0.1
-          </Button>
-          <Button onClick={this.setMuted(true)} className="mr-3">
+          </button>
+          <button onClick={this.setMuted(true)} className="mr-3">
             muted=true
-          </Button>
-          <Button onClick={this.setMuted(false)} className="mr-3">
+          </button>
+          <button onClick={this.setMuted(false)} className="mr-3">
             muted=false
-          </Button>
+          </button>
         </div>
         <div className="pb-3">
-          <Button onClick={this.changeSource('sintelTrailer')} className="mr-3">
+          <button onClick={this.changeSource('sintelTrailer')} className="mr-3">
             Sintel teaser
-          </Button>
-          <Button onClick={this.changeSource('bunnyTrailer')} className="mr-3">
+          </button>
+          <button onClick={this.changeSource('bunnyTrailer')} className="mr-3">
             Bunny trailer
-          </Button>
-          <Button onClick={this.changeSource('bunnyMovie')} className="mr-3">
+          </button>
+          <button onClick={this.changeSource('bunnyMovie')} className="mr-3">
             Bunny movie
-          </Button>
-          <Button onClick={this.changeSource('test')} className="mr-3">
+          </button>
+          <button onClick={this.changeSource('test')} className="mr-3">
             Test movie
-          </Button>
+          </button>
         </div>
       </div>
     );
