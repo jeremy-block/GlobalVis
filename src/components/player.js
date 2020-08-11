@@ -142,7 +142,7 @@ export default class PlayerControlExample extends Component {
             this.player = player;
           }}
           autoPlay
-          fluid = {false}
+          fluid = {true}
           poster = "http://media.w3.org/2010/05/bunny/poster.png"
         >
           <source src={this.state.source} />
