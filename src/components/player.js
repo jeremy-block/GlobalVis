@@ -42,6 +42,7 @@
 
 import React, { Component } from 'react';
 import { Player, ControlBar } from 'video-react';
+import "./player.css"
 
 const sources = {
   sintelTrailer: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
@@ -148,6 +149,10 @@ export default class PlayerControlExample extends Component {
           <source src={this.state.source} />
           <ControlBar autoHide={true} />
         </Player>
+        <div className="littlebar" style={
+          {width: `30%`}
+        }></div>
+
         <div className="py-3">
           <button onClick={this.play} className="mr-3">
             play()
