@@ -41,7 +41,7 @@
 // }
 
 import React, { Component } from 'react';
-import { Player, ControlBar } from 'video-react';
+import { Player, ControlBar, PlayToggle } from 'video-react';
 import "./player.css"
 
 const sources = {
@@ -83,7 +83,8 @@ export default class PlayerControlExample extends Component {
   handleStateChange(state) {
     // copy player state to this component's state
     this.setState({
-      player: state
+      player: state,
+      progressRatio: state.currentTime/state.duration
     });
   }
 
@@ -142,18 +143,29 @@ export default class PlayerControlExample extends Component {
           ref={player => {
             this.player = player;
           }}
-          autoPlay
+          autoPlay = {false}
           fluid = {true}
           poster = "http://media.w3.org/2010/05/bunny/poster.png"
         >
           <source src={this.state.source} />
-          <ControlBar autoHide={true} />
+          <ControlBar>
+          </ControlBar>
         </Player>
-        <div className="littlebar" style={
-          {width: `30%`}
-        }></div>
+        <div className="orangeJucie">
+            <button onClick={this.play} className="mr-3">
+              play()
+            </button>
+            <div className="mainBar">
+              <div
+              className="littlebar" style={
+                {
+                  width: `${this.state.progressRatio * 100}%`
+                }
+              }></div>
+          </div>
+        </div>
 
-        <div className="py-3">
+        {/* <div className="py-3">
           <button onClick={this.play} className="mr-3">
             play()
           </button>
@@ -216,7 +228,7 @@ export default class PlayerControlExample extends Component {
           <button onClick={this.changeSource('test')} className="mr-3">
             Test movie
           </button>
-        </div>
+        </div>*/}
       </div>
     );
   }
