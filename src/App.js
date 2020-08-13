@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import ReactPlayer from 'react-player'
-
+import VideoPackage from './components/videoPackage'
 
 
 function App() {
@@ -9,11 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="Player-container">
-          <ReactPlayer 
-          width='100%'
-          height='100%'
-          controls
-          url='http://media.w3.org/2010/05/sintel/trailer.mp4' />
+          <VideoPackage/>
         </div>
       </header>
     </div>
