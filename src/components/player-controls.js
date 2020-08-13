@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import PlayToggleButton from './playToggleButton'
 import PlayerProgressBar from './playerProgressBar'
-import "./player.css"
+import SpeedToggleButton from "./speedToggleButton";
 
  
 export default class PlayerControls extends Component{
-    handleBtn(e){
-        // console.log(e)
+    handlePlayBtn(e){
         this.props.playPause(e)
     }
+    handleSpeedBtn(e){
+        this.props.toggleSpeed(e)
+    }
     handleSeekDown = (t)=>{
-        console.log(t)
         this.props.down(t)
     }
     handleSeekChange = (t)=>{
-        console.log(t)
         this.props.change(t)
     }
     handleSeekUp = (t)=>{
-        console.log(t)
         this.props.up(t)
     }
     
@@ -28,7 +27,10 @@ export default class PlayerControls extends Component{
             <div>
                 <PlayToggleButton
                  playing={this.props.status.playing}
-                 onClick = {this.handleBtn.bind(this)} />
+                 onClick = {this.handlePlayBtn.bind(this)} />
+                <SpeedToggleButton 
+                 speed={this.props.status.playbackRate}
+                 onClick ={this.handleSpeedBtn.bind(this)} />
                 <PlayerProgressBar
                 played={this.props.status.played}
                 down={this.handleSeekDown.bind(this)}

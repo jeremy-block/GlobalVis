@@ -34,7 +34,11 @@ export default class VideoPackage extends Component{
       this.setState({ muted: !this.state.muted })
     }
     handleSetPlaybackRate = e => {
-      this.setState({ playbackRate: parseFloat(e.target.value) })
+        this.setState( {
+            playbackRate: (this.state.playbackRate === 1)? 2 : 1
+        })
+        console.log(this.state)
+    //   this.setState({ playbackRate: parseFloat(e.target.value) })
     }
     handlePlayPause = () => {
       this.setState({ playing: !this.state.playing })
@@ -60,7 +64,7 @@ export default class VideoPackage extends Component{
       this.player.seekTo(parseFloat(e.target.value))
     }
     handleProgress = state => {
-      console.log('onProgress', state)
+    //   console.log('onProgress', state)
       // We only want to update time slider if we are not currently seeking
       if (!this.state.seeking) {
         this.setState(state)
@@ -108,6 +112,7 @@ export default class VideoPackage extends Component{
                 onDuration={this.handleDuration}/>
             <PlayerControls 
             playPause = {this.handlePlayPause.bind(this)}
+            toggleSpeed = {this.handleSetPlaybackRate.bind(this)}
             down={this.handleSeekMouseDown.bind(this)}
             change={this.handleSeekChange.bind(this)}
             up={this.handleSeekMouseUp.bind(this)}
