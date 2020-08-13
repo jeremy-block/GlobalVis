@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 
 export default class PlayToggleButton extends Component {
-    checkState(){
-        console.log(this.props)
+    clicked(e) {
+        // console.log(e.target)
+        this.props.onClick(e)
     }
     render() {
-        console.log(this.props)
+        // console.log('playButton:',this.props)
         return(
             (this.props.playing)?
-            <button onClick={this.checkState}>Play!</button> :
-            <button onClick={this.checkState}>Stop!</button> 
+            <button id="pause" onClick={this.clicked.bind(this)} >Stop!</button> :
+            <button id="start" onClick={this.clicked.bind(this)} >Play!</button> 
         );
     }
 }
