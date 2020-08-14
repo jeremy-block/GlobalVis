@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1f91d255-19be-418a-a10e-1b1e9daf5421/deploy-status)](https://app.netlify.com/sites/global-vid/deploys)
 Live site available at [global-vid.netlify.app](https://global-vid.netlify.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 import PlayerControls from './player-controls';
 
+//todo add more comments to describe what's happening
 
 export default class VideoPackage extends Component{
     constructor(){
@@ -34,10 +35,10 @@ export default class VideoPackage extends Component{
       this.setState({ muted: !this.state.muted })
     }
     handleSetPlaybackRate = e => {
-        this.setState( {
-            playbackRate: (this.state.playbackRate === 1)? 2 : 1
-        })
-        console.log(this.state)
+      this.setState( {
+          playbackRate: (this.state.playbackRate === 1)? 2 : 1
+      })
+      console.log(this.state)
     //   this.setState({ playbackRate: parseFloat(e.target.value) })
     }
     handlePlayPause = () => {
@@ -88,36 +89,36 @@ export default class VideoPackage extends Component{
 
     render() {
     return(   
-        <div>
-            <ReactPlayer 
-                ref={this.ref}
-                className='react-player'
-                width='100%'
-                height='100%'
-                url={this.state.url}
-                playing={this.state.playing}
-                light={this.state.light}
-                loop={this.state.loop}
-                playbackRate={this.state.playbackRate}
-                volume={this.state.volume}
-                muted={this.state.muted}
-                onReady={() => console.log('onReady')}
-                onStart={() => console.log('onStart')}
-                onPlay={this.handlePlay}
-                onPause={this.handlePause}
-                onSeek={e => console.log('onSeek', e)}
-                onEnded={this.handleEnded}
-                onError={e => console.log('onError', e)}
-                onProgress={this.handleProgress}
-                onDuration={this.handleDuration}/>
-            <PlayerControls 
+      <div>
+        <ReactPlayer 
+            ref={this.ref}
+            className='react-player'
+            width='100%'
+            height='100%'
+            url={this.state.url}
+            playing={this.state.playing}
+            light={this.state.light}
+            loop={this.state.loop}
+            playbackRate={this.state.playbackRate}
+            volume={this.state.volume}
+            muted={this.state.muted}
+            onReady={() => console.log('onReady')}
+            onStart={() => console.log('onStart')}
+            onPlay={this.handlePlay}
+            onPause={this.handlePause}
+            onSeek={e => console.log('onSeek', e)}
+            onEnded={this.handleEnded}
+            onError={e => console.log('onError', e)}
+            onProgress={this.handleProgress}
+            onDuration={this.handleDuration}/>
+        <PlayerControls 
             playPause = {this.handlePlayPause.bind(this)}
             toggleSpeed = {this.handleSetPlaybackRate.bind(this)}
             down={this.handleSeekMouseDown.bind(this)}
             change={this.handleSeekChange.bind(this)}
             up={this.handleSeekMouseUp.bind(this)}
             status={this.state}/>
-          </div>
-          );
-    }
+      </div>
+    );
+  }
 }
