@@ -5,10 +5,10 @@ import PlayerControls from './player-controls';
 //todo add more comments to describe what's happening
 
 export default class VideoPackage extends Component{
-    constructor(){
+    constructor(props){
         super();
         this.state={
-            url: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
+            url: props.source,
             playing: false,
             light: false,
             volume: 0.8,
@@ -20,14 +20,14 @@ export default class VideoPackage extends Component{
             loop: false
         };
     }
-    load = url => {
+    handleChangeSource = newSrc => {
         this.setState({
-          url,
+          url: newSrc,
           played: 0,
           loaded: 0,
-        })
-    }
-
+        });
+        console.log("onChanging")
+      };  
     handleVolumeChange = e => {
       this.setState({ volume: parseFloat(e.target.value) })
     }
@@ -92,7 +92,7 @@ export default class VideoPackage extends Component{
       <div>
         <ReactPlayer 
             ref={this.ref}
-            className='react-player'
+            className='react-window'
             width='100%'
             height='100%'
             url={this.state.url}
