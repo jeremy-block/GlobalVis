@@ -27,7 +27,7 @@ function App() {
             changeSource(src)
             }}>video 1</button>
          <button onClick={() => {
-            const src = 'http://media.w3.org/2010/05/bunny/trailer.mp4' 
+            const src = 'https://global-vid.netlify.app/static/videos/local.mp4' 
             changeSource(src)
             }}>video 2</button>
          <button onClick={() => {
