@@ -1,7 +1,40 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1f91d255-19be-418a-a10e-1b1e9daf5421/deploy-status)](https://app.netlify.com/sites/global-vid/deploys)
-Live site available at [global-vid.netlify.app](https://global-vid.netlify.app/)
+Live demo available at [global-vid.netlify.app](https://global-vid.netlify.app/) 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/177b38c6-870d-4e09-89ae-f00a6d97ba54/deploy-status)](https://app.netlify.com/sites/global-vid/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+> readme updated: 8/17
+
+> *A simple responsive video player with simple controls below the player window.*
+
+# Structure
+The following is the hierarchy of the custom built components. - You will need all the custom files in your project's component's directory to use this responsive video player working.
+- Video Package
+  - React-Player (*installed via NPM)
+  - Player-Controls
+    - PlayToggleButton
+    - SpeedToggleButton
+    - PlayerProgressBar
+
+In addition to the custom components, this project requires React-player to function. Install it with: 
+
+`npm install react-player`
+
+Then copy the custom components listed above into your own project's components folder.
+
+To use this compnent in your own project, Add the Import statment to the parent component, and use the custom component in your code
+
+` import VideoPackage from './components/videoPackage'; `
+
+...
+
+`<VideoPackage ref={mainWindow} source="starting_source" />`
+
+You can access the Component by it's reference. For example:
+
+`mainWindow.current.VideoPackageFunctionToCall`
+
+To see this in action and in more detail open the `App.js` file.
+
 
 ## Available Scripts
 
@@ -12,7 +45,7 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+The page will hot reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### `npm test`
@@ -29,16 +62,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
