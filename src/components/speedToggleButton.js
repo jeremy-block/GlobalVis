@@ -5,8 +5,8 @@ export default class PlayToggleButton extends Component {
         this.props.onClick(e)
     }
     render() {
-        var defaultStyle = {color:"white"}
-        var activeStyle =  {color:"blue", textShadow: "0px 0px 10px blue"}
+        var defaultStyle = {color:"white", cursor: "pointer"}
+        var activeStyle =  {color:"blue", textShadow: "0px 0px 10px blue", cursor: "pointer"}
         return(
             (this.props.speed === 2 )?
             <span style={activeStyle} onClick={this.clicked.bind(this)} >2x</span>:
